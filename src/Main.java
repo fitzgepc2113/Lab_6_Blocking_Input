@@ -29,6 +29,7 @@ import java.util.Scanner;
 
         }
     }
+
 class FuelCosts {
     public static void main(String[] args) {
 
@@ -86,11 +87,40 @@ class FuelCosts {
             }
         }while (!done);
 
+        scanner.close();
+
         costGas = (100 / fuelMillage) * gasPrice;
         System.out.println("Your cost to drive 100 miles is: " + costGas);
 
         driveDistance = fuelMillage * gasTank;
         System.out.println("The max distance you could drive on a full tank of gas is: " + driveDistance);
+
+    }
+}
+
+class RectangleInfo {
+    public static void main(String[] args) {
+        double width = 0.0;
+        double height = 0.0;
+        boolean done = false;
+
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+        do {
+
+            System.out.print("Enter the width of your rectangle: ");
+            if (scanner.hasNextDouble()) {
+                width = scanner.nextDouble();
+
+                System.out.println("Temperature in Fahrenheit: " + width);
+                done = true;
+            } else {
+                System.out.print("Invalid input. Please enter a valid width.");
+                scanner.nextLine();
+            }
+        } while (!done);
+
+        scanner.close();
 
     }
 }
