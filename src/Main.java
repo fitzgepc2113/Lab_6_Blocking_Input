@@ -102,6 +102,9 @@ class RectangleInfo {
     public static void main(String[] args) {
         double width = 0.0;
         double height = 0.0;
+        double area = 0.0;
+        double perimeter = 0.0;
+        double diagonal = 0.0;
         boolean done = false;
 
         java.util.Scanner scanner = new java.util.Scanner(System.in);
@@ -112,7 +115,7 @@ class RectangleInfo {
             if (scanner.hasNextDouble()) {
                 width = scanner.nextDouble();
 
-                System.out.println("Temperature in Fahrenheit: " + width);
+                System.out.println("The width of you rectangle is: " + width);
                 done = true;
             } else {
                 System.out.print("Invalid input. Please enter a valid width.");
@@ -120,7 +123,29 @@ class RectangleInfo {
             }
         } while (!done);
 
+        do {
+
+            System.out.print("Enter the height of your rectangle: ");
+            if (scanner.hasNextDouble()) {
+                height = scanner.nextDouble();
+
+                System.out.println("THe height of your rectangle is: " + height);
+                done = true;
+            } else {
+                System.out.print("Invalid input. Please enter a valid height.");
+                scanner.nextLine();
+            }
+        } while (!done);
+
         scanner.close();
+
+        area = width * height;
+        perimeter = width * 2 + height * 2;
+        System.out.println("The area of the rectangle is: " + area + ". the  perimeter of the rectangle is: " + perimeter);
+
+        diagonal =  Math.sqrt(Math.pow(width,2) + Math.pow(height,2));
+        System.out.println("The diagonal of the rectangle is: " + diagonal);
+
 
     }
 }
