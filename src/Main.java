@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.util.Random;
 
 
     class CtoFConverter {
@@ -146,6 +146,48 @@ class RectangleInfo {
         diagonal =  Math.sqrt(Math.pow(width,2) + Math.pow(height,2));
         System.out.println("The diagonal of the rectangle is: " + diagonal);
 
+
+    }
+}
+
+
+
+class HighorLow {
+    public static void main(String[] args) {
+
+        Random generator = new Random();
+
+        int val = generator.nextInt(10) + 1;
+        int guess = 0;
+        boolean done = false;
+
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+
+
+            do {
+
+                System.out.print("Guess a number [1-10]: ");
+                if (scanner.hasNextInt()) {
+                    guess = scanner.nextInt();
+                    if(guess < 1 || guess > 10) {
+                        System.out.println("Your guess is not between 1 and 10.");
+                    }
+                    else if( guess > val){
+                        System.out.println("Lower!");
+                    }
+                    else if( guess < val){
+                        System.out.println("Higher!");
+                    }
+                } else {
+                    System.out.print("Invalid input. Please enter a valid number.");
+                    scanner.nextLine();
+                }
+            } while (guess != val);
+
+
+
+        scanner.close();
+        System.out.println("On the money! The number was: " + guess);
 
     }
 }
